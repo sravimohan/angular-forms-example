@@ -1,0 +1,27 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button {
+  max-width: 300px;
+}
+
+pre {
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.container {
+  margin-top: 60px;
+}
+
+.error {
+  border: 4px dashed pink;
+}

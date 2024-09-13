@@ -1,0 +1,31 @@
+<h3>Angular Reactive Form Example</h3>
+<h6>Demonstrates reactive form With form contols nested in child components</h6>
+<form class="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <app-first-name [firstNameControl]="firstNameControl"></app-first-name>
+  <app-last-name [lastNameControl]="lastNameControl"></app-last-name>
+  <app-date-of-birth
+    [dateOfBirthControl]="dateOfBirthControl"
+  ></app-date-of-birth>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+
+<div class="container" *ngIf="getControlErrors('firstName')">
+  <p class="title">First Name Errors</p>
+  <pre class="error">{{ getControlErrors("firstName") | json }}</pre>
+</div>
+
+<div class="container" *ngIf="getControlErrors('lastName')">
+  <p class="title">Last Name Errors</p>
+  <pre class="error">{{ getControlErrors("lastName") | json }}</pre>
+</div>
+
+<div class="container" *ngIf="getControlErrors('dateOfBirth')">
+  <p class="title">Date of Birth Errors</p>
+  <pre class="error">{{ getControlErrors("dateOfBirth") | json }}</pre>
+</div>
+
+<div class="container">
+  <p class="title">Form Value</p>
+  <pre>{{ formGroup.value | json }}</pre>
+</div>

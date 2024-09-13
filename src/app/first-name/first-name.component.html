@@ -1,0 +1,11 @@
+<mat-form-field appearance="fill">
+  <mat-label>First Name</mat-label>
+  <input matInput [formControl]="firstNameControl()" />
+  <mat-error *ngIf="firstNameControl().hasError('required')">
+    First Name is required
+  </mat-error>
+  <mat-error *ngIf="firstNameControl().hasError('minlength')">
+    Minimum 2 characters required
+  </mat-error>
+</mat-form-field>
+

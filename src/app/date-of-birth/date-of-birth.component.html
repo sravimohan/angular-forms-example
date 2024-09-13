@@ -1,0 +1,14 @@
+<mat-form-field appearance="fill">
+  <mat-label>Date of Birth</mat-label>
+  <input
+    matInput
+    [matDatepicker]="picker"
+    [formControl]="dateOfBirthControl()"
+  />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="dateOfBirthControl().hasError('required')">
+    Date of Birth is required
+  </mat-error>
+</mat-form-field>
